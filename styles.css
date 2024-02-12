@@ -1,0 +1,93 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.square{
+    position: relative;
+    overflow: hidden;
+}
+img{
+    width: 100%;
+}
+p{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 15px;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgba(255, 255, 255, 0.45);
+}
+img,p{
+    transition: 300ms ease-in-out;
+}
+.fade, .rotate, .zoomout{
+    opacity: 0;
+}
+
+.square:hover > .fade{
+    opacity: 1;
+}
+
+.square:hover > .rotate{
+    opacity: 1;
+    transition: 1000ms ease-in-out;
+    transform: rotate(360deg);
+}
+.square:hover > .zoomout{
+    opacity: 1;
+    transform: scale(0.9);
+}
+
+.up{
+    transform: translateY(-100%);
+ }
+ .square:hover > .up{
+    transform: translateY(0);
+ }
+
+ .down{
+    transform: translateY(100%);
+ }
+ .square:hover > .down{
+    transform: translateY(0);
+ }
+
+ .left{
+    transform: translateX(100%);
+ }
+ .square:hover > .left{
+    transform: translateX(0);
+ }
+
+ .right{
+    transform: translateX(-100%);
+ }
+ .square:hover > .right{
+    transform: translateX(0);
+ }
+ .zoomin{
+    
+    transform: scale(0);
+ }
+ .square:hover > .zoomin{
+    transform: scale(1);
+ }
+ .square:hover > .blr{
+    filter: blur(4px);
+ }
+ .square:hover > .zm{
+    transform: scale(1.1);
+ }
+ .square:hover > .gry{
+    filter: grayscale(1);
+ }
+ .square:hover > .cntr{
+    filter: saturate(5);
+ }
